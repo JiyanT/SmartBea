@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.BrowserUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,15 @@ public class smartBea_step_def {
            WebElement loginBtn= driver.findElement(By.id("ctl00_MainContent_login_button"));
            loginBtn.click();
         }
+
+            @When("User enter credential SmartBearUtils")
+            public void userEnterCredentialSmartBearUtils() {
+
+            BrowserUtil.SmartBearUtils(driver);
+
+            }
+
+
         @Then("User count and print the list of names")
         public void user_count_and_print_the_list_of_names () {
             List<WebElement> names = driver.findElements(By.xpath
@@ -66,4 +76,6 @@ public class smartBea_step_def {
 
 
         }
-    }
+
+
+}
